@@ -1,0 +1,197 @@
+$fonttitulo: 'Vollkorn', serif;
+$font: 'Poppins', sans-serif;
+$rosa: #E48C89;
+$marron: #422919;
+$celeste: #4C7295;
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: $font;
+    color: $marron;
+    line-height: 1.6;
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.menu{
+    background-color: $celeste;
+    height: 180px;
+    a{
+        font-size: 1.5rem;
+        font-family: $fonttitulo;
+        color: $marron;
+    &:hover{
+        color: $rosa;
+    }}
+
+    .logo{
+        img{
+            height: 150px;
+            width: 180px;
+            object-fit: cover;
+        }
+    }
+}
+
+.presentacion{
+    img { 
+        position: relative; 
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+     }
+     
+     h1 { 
+        text-align: right;
+        width: 400px;
+        z-index: 2;
+        background-color: transparent;
+        position:absolute; 
+        top: 300px; 
+        left: 900px; 
+        font-size: 5rem;
+        font-family: $fonttitulo;
+     }
+}
+
+h2{
+    text-align: center;
+    font-family: $fonttitulo;
+    color: $celeste;
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+
+
+.historia{
+    background-color: #4c729531;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        background-color: transparent;
+        font-size: 1.5rem;
+        width: 600px;
+    }
+    img{
+        background-color: transparent;
+    }
+}
+
+.pedido{
+    margin: 80px;
+    h3{
+        color: $rosa;
+        font-family: $fonttitulo;
+    }
+}
+
+.tortas, .desayunos, .unidades {
+    display: flex;
+    flex-wrap: wrap;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+    h4{
+        color: $marron;
+        text-align: center;
+    }
+    img{
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+}
+
+
+.forms{
+    display: flex;
+    flex-direction: row;
+}
+.formLogin{
+    padding: 10px;
+    width: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    border-width: 1px;
+}
+.form-control{
+    width: 304px;
+    height: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    resize: none;
+}
+
+
+
+.btn-primary{
+    background-color: $marron;
+    border-color: $marron;
+    width: 100px;
+    font-size: 1.2rem;
+    transition-duration: 0.5s;
+    margin-top: 10px;
+    &:hover{
+        background-color: $celeste;
+        border-color: $celeste;
+        width: 100px;
+        font-size: 1.2rem;
+    }
+}
+
+.todoContacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.contactoTexto{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+
+}
+.linksContacto{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.bi{
+    color: $marron;
+    font-size: 1.8rem;
+    background-color: #830fd11e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+}
+.btn{
+        color: #E48C89;
+    background-color: $marron;
+    border-color: $marron;
+    width: 200px;
+    font-size: 1rem;
+    transition-duration: 0.5s;
+    margin-top: 10px;
+    &:hover{
+        background-color: $celeste;
+        border-color: $celeste;
+        width: 200px;
+        font-size: 1rem;
+    }
+}
