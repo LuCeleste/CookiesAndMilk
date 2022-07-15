@@ -107,15 +107,7 @@ function comprar(email, tel, productosEnCarro) {
     alert("Gracias " + nombreIngresado + " por tu compra. \n Total sin iva: $" + cant);   
 }
 
-
-
-
-
-
-
-
-
-
+// DOM
 
 const budinSabores = ["Limon", "Vainilla", "Marmolado", "Coco", "Red Velvet", "Mandarina"]
 const budinesList = document.getElementById('budines')
@@ -131,3 +123,21 @@ setTimeout(() => {
     const container =  document.getElementById('tituloPedido')
     container.innerHTML = `Gracias por tu compra`;
 },10000);
+
+
+// Clase Eventos
+
+let boton = document.getElementById("btnForm");
+let inputNombre = document.getElementById("inputNombre");
+let inputMail = document.getElementById("exampleInputEmail1");
+
+inputNombre.oninput = () => {
+    nombreForm = inputNombre.value;
+}
+inputMail.oninput = () => {
+    emailForm = inputMail.value;
+}
+boton.onclick = () => {
+    alert("Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm);
+} 
+
