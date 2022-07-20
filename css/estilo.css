@@ -13,15 +13,20 @@ a {
   text-decoration: none;
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 000, 220, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .menu {
-  background-color: #4C7295;
-  height: 180px;
+  z-index: 3;
+  height: 50px;
 }
 
 .menu a {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Vollkorn", serif;
   color: #422919;
+  background-color: #4c729563;
 }
 
 .menu a:hover {
@@ -29,29 +34,40 @@ a {
 }
 
 .menu .logo img {
-  height: 150px;
-  width: 180px;
+  background-color: transparent;
+  height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.navbar-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  background-color: #4c729563;
 }
 
 .presentacion img {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .presentacion h1 {
   text-align: right;
-  width: 400px;
+  width: 200px;
   z-index: 2;
   background-color: transparent;
   position: absolute;
-  top: 300px;
-  left: 900px;
-  font-size: 5rem;
+  top: 90px;
+  left: 100px;
+  font-size: 1.5rem;
   font-family: "Vollkorn", serif;
 }
 
@@ -59,8 +75,8 @@ h2 {
   text-align: center;
   font-family: "Vollkorn", serif;
   color: #4C7295;
-  font-size: 2.5rem;
-  margin-top: 30px;
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 .historia {
@@ -68,6 +84,10 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -78,12 +98,12 @@ h2 {
 
 .historia p {
   background-color: transparent;
-  font-size: 1.5rem;
-  width: 600px;
+  font-size: 1rem;
 }
 
 .historia img {
   background-color: transparent;
+  width: 200px;
 }
 
 .pedido {
@@ -123,8 +143,8 @@ h2 {
 }
 
 .producto img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
@@ -134,10 +154,10 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .formLogin {
@@ -158,6 +178,24 @@ h2 {
   resize: none;
 }
 
+.formLogin-1 {
+  padding: 10px;
+  width: 250px;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  margin: 2px;
+  border-width: 1px;
+}
+
+.newsletterForm, .newsletterFormNombre {
+  padding: 5px;
+  width: 200px;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  margin: 1px;
+  border-width: 1px;
+}
+
 .btn-primary {
   background-color: #422919;
   border-color: #422919;
@@ -175,14 +213,32 @@ h2 {
   font-size: 1.2rem;
 }
 
+.enviar {
+  border-radius: .5rem;
+  color: #E48C89;
+  background-color: #422919;
+  border-color: #422919;
+  width: 80px;
+  font-size: 1rem;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  margin-top: 10px;
+}
+
+.enviar:hover {
+  background-color: #4C7295;
+  border-color: #4C7295;
+  font-size: 1rem;
+}
+
 .todoContacto {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -236,4 +292,574 @@ h2 {
   border-color: #4C7295;
   width: 200px;
   font-size: 1rem;
+}
+
+.gustos {
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer {
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media only screen and (min-width: 600px) {
+  .menu {
+    z-index: 3;
+    height: 80px;
+  }
+  .menu a {
+    font-size: 1rem;
+    font-family: "Vollkorn", serif;
+    color: #422919;
+    background-color: #4c729563;
+  }
+  .menu a:hover {
+    color: #E48C89;
+  }
+  .menu .logo img {
+    background-color: transparent;
+    height: 80px;
+    width: 80px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .navbar-nav {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: transparent;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    background-color: #4c729563;
+  }
+  .presentacion img {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .presentacion h1 {
+    text-align: right;
+    width: 100px;
+    z-index: 2;
+    background-color: transparent;
+    position: absolute;
+    top: 200px;
+    left: 1000px;
+    font-size: 2rem;
+    font-family: "Vollkorn", serif;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Vollkorn", serif;
+    color: #4C7295;
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  .historia {
+    background-color: #4c729531;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .historia p {
+    background-color: transparent;
+    font-size: 1rem;
+    width: 400px;
+  }
+  .historia img {
+    background-color: transparent;
+    width: 200px;
+  }
+  .pedido {
+    margin: 80px;
+  }
+  .pedido h3 {
+    color: #E48C89;
+    font-family: "Vollkorn", serif;
+  }
+  .tortas, .desayunos, .unidades {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .producto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .producto h4 {
+    color: #422919;
+    text-align: center;
+  }
+  .producto img {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 1rem;
+  }
+  .forms {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .formLogin {
+    padding: 10px;
+    width: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    border-width: 1px;
+  }
+  .form-control {
+    width: 304px;
+    height: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    resize: none;
+  }
+  .formLogin-1 {
+    padding: 10px;
+    width: 250px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    border-width: 1px;
+  }
+  .newsletterForm, .newsletterFormNombre {
+    padding: 5px;
+    width: 200px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 1px;
+    border-width: 1px;
+  }
+  .btn-primary {
+    background-color: #422919;
+    border-color: #422919;
+    width: 100px;
+    font-size: 1.2rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .btn-primary:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    width: 100px;
+    font-size: 1.2rem;
+  }
+  .enviar {
+    border-radius: .5rem;
+    color: #E48C89;
+    background-color: #422919;
+    border-color: #422919;
+    width: 80px;
+    font-size: 1rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .enviar:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    font-size: 1rem;
+  }
+  .todoContacto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .contactoTexto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 1.5rem;
+  }
+  .linksContacto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .bi {
+    color: #422919;
+    font-size: 1.8rem;
+    background-color: #830fd11e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+  }
+  .btn {
+    color: #E48C89;
+    background-color: #422919;
+    border-color: #422919;
+    width: 200px;
+    font-size: 1rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .btn:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    width: 200px;
+    font-size: 1rem;
+  }
+  .gustos {
+    margin: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  footer {
+    margin: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu {
+    height: 180px;
+  }
+  .menu a {
+    font-size: 1.5rem;
+    font-family: "Vollkorn", serif;
+    color: #422919;
+    background-color: #4c729563;
+  }
+  .menu a:hover {
+    color: #E48C89;
+  }
+  .menu .logo img {
+    background-color: transparent;
+    height: 150px;
+    width: 180px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .navbar-nav {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: transparent;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    background-color: #4c729563;
+  }
+  .presentacion img {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .presentacion h1 {
+    text-align: right;
+    width: 400px;
+    z-index: 2;
+    background-color: transparent;
+    position: absolute;
+    top: 300px;
+    left: 900px;
+    font-size: 5rem;
+    font-family: "Vollkorn", serif;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Vollkorn", serif;
+    color: #4C7295;
+    font-size: 2.5rem;
+    margin-top: 30px;
+  }
+  .historia {
+    background-color: #4c729531;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .historia p {
+    background-color: transparent;
+    font-size: 1.5rem;
+    width: 600px;
+  }
+  .historia img {
+    background-color: transparent;
+  }
+  .pedido {
+    margin: 80px;
+  }
+  .pedido h3 {
+    color: #E48C89;
+    font-family: "Vollkorn", serif;
+  }
+  .tortas, .desayunos, .unidades {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .producto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .producto h4 {
+    color: #422919;
+    text-align: center;
+  }
+  .producto img {
+    width: 250px;
+    height: 250px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 1rem;
+  }
+  .forms {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .formLogin {
+    padding: 10px;
+    width: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    border-width: 1px;
+  }
+  .form-control {
+    width: 304px;
+    height: 150px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    resize: none;
+  }
+  .formLogin-1 {
+    padding: 10px;
+    width: 250px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 2px;
+    border-width: 1px;
+  }
+  .newsletterForm, .newsletterFormNombre {
+    padding: 5px;
+    width: 200px;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 1px;
+    border-width: 1px;
+  }
+  .btn-primary {
+    background-color: #422919;
+    border-color: #422919;
+    width: 100px;
+    font-size: 1.2rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .btn-primary:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    width: 100px;
+    font-size: 1.2rem;
+  }
+  .enviar {
+    border-radius: .5rem;
+    color: #E48C89;
+    background-color: #422919;
+    border-color: #422919;
+    width: 80px;
+    font-size: 1rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .enviar:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    font-size: 1rem;
+  }
+  .todoContacto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .contactoTexto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 1.5rem;
+  }
+  .linksContacto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .bi {
+    color: #422919;
+    font-size: 1.8rem;
+    background-color: #830fd11e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+  }
+  .btn {
+    color: #E48C89;
+    background-color: #422919;
+    border-color: #422919;
+    width: 200px;
+    font-size: 1rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin-top: 10px;
+  }
+  .btn:hover {
+    background-color: #4C7295;
+    border-color: #4C7295;
+    width: 200px;
+    font-size: 1rem;
+  }
+  .gustos {
+    margin: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  footer {
+    margin: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }

@@ -1,30 +1,8 @@
-$fonttitulo: 'Vollkorn', serif;
-$font: 'Poppins', sans-serif;
-$rosa: #E48C89;
-$marron: #422919;
-$celeste: #4C7295;
 
-*{
-    margin: 0px;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: $font;
-    color: $marron;
-    line-height: 1.6;
-    background-color: white;
-}
-
-a{
-    text-decoration: none;
-}
-.navbar-toggler-icon{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 000, 220, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
-}
 .menu{
-    z-index: 3;
-    height: 50px;
+    height: 180px;
     a{
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-family: $fonttitulo;
         color: $marron;
         background-color:  #4c729563;
@@ -34,7 +12,8 @@ a{
     .logo{
         img{
             background-color:transparent;
-            height: 50px;
+            height: 150px;
+            width: 180px;
             object-fit: cover;
         }
     }
@@ -51,19 +30,19 @@ a{
     img { 
         position: relative; 
         width: 100%;
-        height: 50vh;
+        height: 70vh;
         object-fit: cover;
      }
      
      h1 { 
         text-align: right;
-        width: 200px;
+        width: 400px;
         z-index: 2;
         background-color: transparent;
         position:absolute; 
-        top: 90px; 
-        left: 100px; 
-        font-size: 1.5rem;
+        top: 300px; 
+        left: 900px; 
+        font-size: 5rem;
         font-family: $fonttitulo;
      }
 }
@@ -72,24 +51,24 @@ h2{
     text-align: center;
     font-family: $fonttitulo;
     color: $celeste;
-    font-size: 2rem;
-    margin-top: 20px;
+    font-size: 2.5rem;
+    margin-top: 30px;
 }
 
 
 .historia{
     background-color: #4c729531;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     p{
         background-color: transparent;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        width: 600px;
     }
     img{
         background-color: transparent;
-        width: 200px;
     }
 }
 
@@ -115,8 +94,8 @@ h2{
         text-align: center;
     }
     img{
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         object-fit: cover;
         border-radius: 1rem;
     }
@@ -125,7 +104,7 @@ h2{
 
 .forms{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .formLogin{
     padding: 10px;
@@ -151,7 +130,7 @@ h2{
     margin: 2px;
     border-width: 1px;
 }
-.newsletterForm, .newsletterFormNombre{
+.newsletterForm,  .newsletterFormNombre{
     padding: 5px;
     width: 200px;
     border-radius: 1rem;
@@ -193,7 +172,7 @@ h2{
 }
 .todoContacto{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
 .contactoTexto{
@@ -239,21 +218,12 @@ h2{
 .gustos{
     margin: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
 footer{
     margin: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
-}
-
-
-
-@media only screen and (min-width: 600px){
-    @import "mediatablet";
-}
-@media only screen and (min-width: 1024px){
-    @import "mediadesktop";
 }

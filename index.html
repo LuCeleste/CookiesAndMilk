@@ -30,7 +30,7 @@
                     <a class="nav-link" href="index.html#historia">Nuestra Historia</a>
                   </li>
                   <a class="navbar-brand logo" href="index.html">
-                    <img src="media/logohueco.png" alt="logo">
+                    <img src="media/logolargo.png" alt="logo">
                   </a>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html#pedido">Hacer Pedido</a>
@@ -141,9 +141,6 @@
                     <button type="button" class="btn btn-outline-primary">Agregar al pedido</button>
                     </div>
                </div>
-
-
-
                <h3>
                 Porciones
             </h3>
@@ -170,7 +167,7 @@
                <img src="media/budinchoco.jpg">
                <button type="button" class="btn btn-outline-primary">Agregar al pedido</button>
                </div>
-               <div id=budines class="producto">
+               <div class="producto">
                <h4>
                    Otros budines
                </h4>
@@ -200,6 +197,45 @@
                         </div>
                </div>
         </section>
+
+
+
+        <h2>Que gustos te gustaría agragar a nuestro menu?</h2>
+        <section class="gustos">
+
+        <section id="formularioGustos">
+            <form>
+                <div class="forms">
+                <div class="mb-3">
+                <input id="gusto" class="formLogin-1" type="text" placeholder="Gusto nuevo" name="nombre" required>
+                </div>
+                </div>
+                <button id="btnForm" type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                <div class="errores">
+                    <h1>Faltar llenar campos</h1>
+                </div>
+              </form>
+            </section>
+
+            <div class="col-md-6">
+                <table id="tablaGustos" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Así quedaria nuestro menú. Muchas gracias!</td>
+                        </tr>
+                    </th>
+                        
+                        <tbody class="tabla">
+                            
+                        </tbody>
+                        
+                </table>
+            </div>
+
+
+
+        </section>
+
         <section id="contacto" class="wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
             <h2>Contactame!</h2>
             <section class="todoContacto">
@@ -233,7 +269,26 @@
     </main>
 
     <footer>
-
+        <section class="news">
+            <h4> Newsletter </h4> 
+            Suscríbete para recibir todas las novedades!  &#x1F496; 
+            <div id="Newsletter">
+                <form>
+                  <label class="newsletterform_margen" for="nombre"></label>
+                  <input class="newsletterFormNombre" type="text" placeholder="Nombre" name="nombre">
+                  <label for="email"></label>
+                  <input class="newsletterForm" type="email" placeholder="Mail* " name="email" required>
+                  <input id="btnNews" class="enviar" type="submit" value="Enviar">
+                </form>
+            </div>
+            </section >
+            <section class="datos">
+                <h4> Datos de contacto </h4> 
+                <ul>
+                  <li> <i class="bi bi-envelope-paper-heart "></i> </a> cookiesandmilkmdp@gmail.com</li>
+                  <li> <a href="https://www.instagram.com/cookiesandmilkmdp/" target="_blank"><i class="bi bi-instagram "></i></a> @cookiesandmilkmdp</li>
+              </ul>
+            </section>
 
 
     </footer>
