@@ -6,6 +6,8 @@
         font-family: $fonttitulo;
         color: $marron;
         background-color:  #4c729563;
+        transition: all;
+        transition-duration: 0.5s;
     &:hover{
         color: $rosa;
     }}
@@ -15,6 +17,7 @@
             height: 150px;
             width: 180px;
             object-fit: cover;
+            display: block;
         }
     }
 }
@@ -83,6 +86,7 @@ h2{
 .tortas, .desayunos, .unidades {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .producto{
     display: flex;
@@ -144,6 +148,7 @@ h2{
     border-color: $marron;
     width: 100px;
     font-size: 1.2rem;
+    transition: all;
     transition-duration: 0.5s;
     margin-top: 10px;
     &:hover{
@@ -168,12 +173,13 @@ h2{
         background-color: $celeste;
         border-color: $celeste;
         font-size: 1rem;
+        transition-duration: 0.5s;
     }
 }
 .todoContacto{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .contactoTexto{
     display: flex;
@@ -205,6 +211,7 @@ h2{
     border-color: $marron;
     width: 200px;
     font-size: 1rem;
+    transition: all;
     transition-duration: 0.5s;
     margin-top: 10px;
     &:hover{
@@ -219,11 +226,11 @@ h2{
     margin: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 footer{
     margin: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
