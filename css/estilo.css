@@ -9,6 +9,10 @@
   background-color: white;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -27,6 +31,10 @@ a {
   font-family: "Vollkorn", serif;
   color: #422919;
   background-color: #4c729563;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .menu a:hover {
@@ -34,6 +42,7 @@ a {
 }
 
 .menu .logo img {
+  display: none;
   background-color: transparent;
   height: 50px;
   -o-object-fit: cover;
@@ -99,6 +108,7 @@ h2 {
 .historia p {
   background-color: transparent;
   font-size: 1rem;
+  text-align: center;
 }
 
 .historia img {
@@ -106,24 +116,31 @@ h2 {
   width: 200px;
 }
 
-.pedido {
-  margin: 80px;
-}
-
 .pedido h3 {
   color: #E48C89;
   font-family: "Vollkorn", serif;
+  text-align: center;
 }
 
-.tortas, .desayunos, .unidades {
+.products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
-.producto {
+.item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,17 +154,39 @@ h2 {
           align-items: center;
 }
 
-.producto h4 {
+.item h4 {
   color: #422919;
   text-align: center;
 }
 
-.producto img {
+.item img {
   width: 200px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
+  opacity: 0.8;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.item img:hover {
+  opacity: 1;
+}
+
+.item-info img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  opacity: 0.8;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.item-info img:hover {
+  opacity: 1;
 }
 
 .forms {
@@ -161,11 +200,11 @@ h2 {
 }
 
 .formLogin {
+  margin-top: 10px;
   padding: 10px;
-  width: 150px;
+  width: 300px;
   border-radius: 1rem;
   font-size: 1.2rem;
-  margin: 2px;
   border-width: 1px;
 }
 
@@ -183,13 +222,12 @@ h2 {
   width: 250px;
   border-radius: 1rem;
   font-size: 1.2rem;
-  margin: 2px;
   border-width: 1px;
 }
 
 .newsletterForm, .newsletterFormNombre {
-  padding: 5px;
-  width: 200px;
+  padding: 10px;
+  width: 300px;
   border-radius: 1rem;
   font-size: 1.2rem;
   margin: 1px;
@@ -201,6 +239,8 @@ h2 {
   border-color: #422919;
   width: 100px;
   font-size: 1.2rem;
+  -webkit-transition: all;
+  transition: all;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   margin-top: 10px;
@@ -220,6 +260,8 @@ h2 {
   border-color: #422919;
   width: 80px;
   font-size: 1rem;
+  -webkit-transition: all;
+  transition: all;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   margin-top: 10px;
@@ -241,6 +283,10 @@ h2 {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
 }
 
 .contactoTexto {
@@ -282,6 +328,8 @@ h2 {
   border-color: #422919;
   width: 200px;
   font-size: 1rem;
+  -webkit-transition: all;
+  transition: all;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   margin-top: 10px;
@@ -292,6 +340,25 @@ h2 {
   border-color: #4C7295;
   width: 200px;
   font-size: 1rem;
+}
+
+.btn1 {
+  border-radius: 0.25rem;
+  text-align: center;
+  color: #E48C89;
+  background-color: #422919;
+  border-color: #422919;
+  width: 50px;
+  font-size: 1rem;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.btn1:hover {
+  background-color: #4C7295;
+  border-color: #4C7295;
 }
 
 .gustos {
@@ -320,6 +387,52 @@ footer {
       justify-content: space-around;
 }
 
+.cart-header {
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.subtotal {
+  text-align: center;
+}
+
+.units {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
 @media only screen and (min-width: 600px) {
   .menu {
     z-index: 3;
@@ -330,16 +443,20 @@ footer {
     font-family: "Vollkorn", serif;
     color: #422919;
     background-color: #4c729563;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
   }
   .menu a:hover {
     color: #E48C89;
   }
   .menu .logo img {
     background-color: transparent;
-    height: 80px;
     width: 80px;
     -o-object-fit: cover;
        object-fit: cover;
+    display: none;
   }
   .navbar-nav {
     -webkit-box-align: center;
@@ -359,12 +476,12 @@ footer {
   }
   .presentacion h1 {
     text-align: right;
-    width: 100px;
+    width: 300px;
     z-index: 2;
     background-color: transparent;
     position: absolute;
     top: 200px;
-    left: 1000px;
+    left: 300px;
     font-size: 2rem;
     font-family: "Vollkorn", serif;
   }
@@ -393,28 +510,36 @@ footer {
   }
   .historia p {
     background-color: transparent;
-    font-size: 1rem;
-    width: 400px;
+    font-size: 1.2rem;
+    width: 500px;
   }
   .historia img {
     background-color: transparent;
     width: 200px;
   }
-  .pedido {
-    margin: 80px;
-  }
   .pedido h3 {
     color: #E48C89;
     font-family: "Vollkorn", serif;
+    text-align: center;
   }
-  .tortas, .desayunos, .unidades {
+  .products {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
   }
-  .producto {
+  .item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -427,16 +552,29 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
-  .producto h4 {
+  .item h4 {
     color: #422919;
     text-align: center;
   }
-  .producto img {
+  .item img {
     width: 200px;
     height: 200px;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 1rem;
+  }
+  .item-info img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 1rem;
+    opacity: 0.8;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+  }
+  .item-info img:hover {
+    opacity: 1;
   }
   .forms {
     display: -webkit-box;
@@ -449,7 +587,7 @@ footer {
   }
   .formLogin {
     padding: 10px;
-    width: 150px;
+    width: 300px;
     border-radius: 1rem;
     font-size: 1.2rem;
     margin: 2px;
@@ -484,6 +622,8 @@ footer {
     border-color: #422919;
     width: 100px;
     font-size: 1.2rem;
+    -webkit-transition: all;
+    transition: all;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     margin-top: 10px;
@@ -501,6 +641,8 @@ footer {
     border-color: #422919;
     width: 80px;
     font-size: 1rem;
+    -webkit-transition: all;
+    transition: all;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     margin-top: 10px;
@@ -557,6 +699,8 @@ footer {
     border-color: #422919;
     width: 200px;
     font-size: 1rem;
+    -webkit-transition: all;
+    transition: all;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     margin-top: 10px;
@@ -591,6 +735,23 @@ footer {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .cart-header {
+    font-size: 2rem;
+  }
+  .cart-header, .cart-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .subtotal {
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -602,6 +763,10 @@ footer {
     font-family: "Vollkorn", serif;
     color: #422919;
     background-color: #4c729563;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
   }
   .menu a:hover {
     color: #E48C89;
@@ -612,6 +777,7 @@ footer {
     width: 180px;
     -o-object-fit: cover;
        object-fit: cover;
+    display: block;
   }
   .navbar-nav {
     -webkit-box-align: center;
@@ -671,21 +837,29 @@ footer {
   .historia img {
     background-color: transparent;
   }
-  .pedido {
-    margin: 80px;
-  }
   .pedido h3 {
     color: #E48C89;
     font-family: "Vollkorn", serif;
+    text-align: center;
   }
-  .tortas, .desayunos, .unidades {
+  .products {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
   }
-  .producto {
+  .item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -698,16 +872,27 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
-  .producto h4 {
+  .item h4 {
+    width: 200px;
     color: #422919;
     text-align: center;
   }
-  .producto img {
+  .item img {
     width: 250px;
     height: 250px;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 1rem;
+  }
+  .item-info img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 1rem;
+  }
+  .item-info img:hover {
+    opacity: 1;
   }
   .forms {
     display: -webkit-box;
@@ -755,6 +940,8 @@ footer {
     border-color: #422919;
     width: 100px;
     font-size: 1.2rem;
+    -webkit-transition: all;
+    transition: all;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     margin-top: 10px;
@@ -780,6 +967,8 @@ footer {
     background-color: #4C7295;
     border-color: #4C7295;
     font-size: 1rem;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
   }
   .todoContacto {
     display: -webkit-box;
@@ -789,8 +978,9 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .contactoTexto {
     display: -webkit-box;
@@ -828,6 +1018,8 @@ footer {
     border-color: #422919;
     width: 200px;
     font-size: 1rem;
+    -webkit-transition: all;
+    transition: all;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     margin-top: 10px;
@@ -847,8 +1039,9 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   footer {
     margin: 50px;
@@ -859,7 +1052,33 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .cart-header {
+    font-size: 2rem;
+  }
+  .cart-header, .cart-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .subtotal {
+    text-align: center;
+  }
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+ul {
+  padding-left: 0px;
 }

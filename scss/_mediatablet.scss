@@ -77,19 +77,21 @@ h2{
 }
 
 .pedido{
-    margin: 80px;
     h3{
         color: $rosa;
         font-family: $fonttitulo;
+        text-align: center;
     }
 }
 
-.tortas, .desayunos, .unidades {
+.products{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: end;
 }
-.producto{
+.item{
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -105,7 +107,19 @@ h2{
         border-radius: 1rem;
     }
 }
-
+.item-info{
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 1rem;
+        opacity: 0.8;
+        transition-duration: 0.5s;
+        &:hover{
+            opacity:1;
+        }
+    }
+}
 
 .forms{
     display: flex;
@@ -234,4 +248,16 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.cart-header{
+    font-size: 2rem;
+}
+.cart-header, .cart-item{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.subtotal{
+    text-align: center;
 }

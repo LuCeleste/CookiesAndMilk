@@ -1,54 +1,210 @@
+const products = [
+    {
+        id: 1,
+        name: "Chocotorta",
+        price: 100,
+        img: "media/chocotorta.jpg",
+    },
+    {
+        id: 2,
+        name: "Torta Clasica",
+        price: 200,
+        img: "media/torta.jpg",
+    },
+    {
+        id: 3,
+        name: "Inicial Cumpleaños",
+        price: 300,
+        img: "media/tortaletra.jpg",
+    },
+    {
+        id: 4,
+        name: "Combo dia de las madres",
+        price: 400,
+        img: "media/madres.jpg",
+    },
+    {
+        id: 5,
+        name: "Combo dia de las madres",
+        price: 500,
+        img: "media/madres2.jpg",
+    },
+    {
+        id: 6,
+        name: "Huevo relleno de pascuas",
+        price: 600,
+        img: "media/huevo1.jpg",
+    },
+    {
+        id: 7,
+        name: "Combo navidad 1",
+        price: 700,
+        img: "media/navidad.jpg",
+    },
+    {
+        id: 8,
+        name: "Combo navidad 2",
+        price: 800,
+        img: "media/navidad2.jpg",
+    },
+    {
+        id: 9,
+        name: "Combo navidad 3",
+        price: 900,
+        img: "media/navidad3.jpg",
+    },
+    {
+        id: 10,
+        name: "Alfajores",
+        price: 1000,
+        img: "media/alfajores.jpg",
+    },
+    {
+        id: 11,
+        name: "Alfaoreos",
+        price: 1100,
+        img: "media/alfaoreo.jpg",
+    },
+    {
+        id: 12,
+        name: "Budin de Chocolate",
+        price: 1200,
+        img: "media/budinchoco.jpg",
+    },
+    {
+        id: 13,
+        name: "Otros budines",
+        price: 1300,
+        img: "media/budines.jpg",
+    },
+    {
+        id: 14,
+        name: "Chocopaleta",
+        price: 1400,
+        img: "media/chocopaleta.jpg",
+    },    
+    {
+        id: 15,
+        name: "Cookies",
+        price: 1500,
+        img: "media/cookies.jpg",
+    },
+    {
+        id: 16,
+        name: "Macarons",
+        price: 1600,
+        img: "media/macarons.jpg",
+    },
+]
 
-// do{
-//     elegirTorta = parseInt(prompt(`Pedir precio de la torta: (ingresar número) \n\n 1- ${torta1.nombre}, sabor ${torta1.sabor} \n 2- ${torta2.nombre},  sabores ${torta2.sabor}\n 3- ${torta3.nombre}, sabor ${torta3.sabor} \n 4- Salir`))
-//     switch (elegirTorta) {
-//         case 1:
-//             torta1.sumaIva()
-//             break;
-//         case 2:
-//             torta2.sumaIva()
-//             break;
-//         case 3:
-//             torta3.sumaIva()
-//             break;
-//         default:
-//             alert('Los precios son validos hasta el 05/08/2022')
-//             break;
-//     }
-// } while(elegirTorta !== 4 );
+const productsListEl = document.querySelector(".products-list");
+const productEl = document.querySelector(".products");
+const cartItemsEl = document.querySelector(".cart-items");
+const subtotalEl = document.querySelector(".subtotal");
+
+function renderProducts() {
+    products.forEach( (product) => {
+        productEl.innerHTML += `
+        <div class="item">
+            <h4>
+            ${product.name}
+            </h4>
+            <p>
+            $ ${product.price}
+            </p>
+            <img class="item-img" src=${product.img} alt="${product.name}">
+            <button onclick="addToCart(${product.id})" type="button" class="btn add-to-cart btn-outline-primary">Agregar al pedido</button>
+        </div>
+        `
+    })
+}
+renderProducts();
+
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
+
+function addToCart(id) {
+    if(cart.some((item) => item.id === id)){
+        changeNumberOfUnits("plus", id)
+    } else{
+        const item = products.find((product) => product.id === id);
+        cart.push({
+            ...item,
+            numberOfUnits: 1,
+    });    
+    }
+    updateCart();
+}
+
+function updateCart() {
+    renderCartItems();
+    renderSubtotal();
+
+    localStorage.setItem("CART", JSON.stringify(cart));
+}
+
+function renderSubtotal() {
+    let totalPrice = 0,
+     totalItems =0;
+    cart.forEach((item) => {
+        totalPrice += item.price * item.numberOfUnits;
+        totalItems += item.numberOfUnits;
+    });
+    subtotalEl.innerHTML = `
+    Subtotal (${totalItems} items): $ ${totalPrice}
+    `
+}
+
+function renderCartItems() {
+    cartItemsEl.innerHTML = "";
+    cart.forEach((item) => {
+        cartItemsEl.innerHTML += `
+        <div class="cart-item">
+        <div class="item-info">
+            <img src=${item.img} alt="${item.name}">
+            <h4> ${item.name}</h4>
+        </div>
+        <div class="unit-price">
+            <p>$ ${item.price} </p>
+        </div>
+        <div class="units">
+            <p class="eliminar" onclick="removeItemFromCart(${item.id})"> Eliminar \u274C </p>
+            <div class="btn1 minus" onclick="changeNumberOfUnits('minus', ${item.id})" > - </div>
+            <div class="number"> ${item.numberOfUnits}</div>
+            <div class="btn1 plus" onclick="changeNumberOfUnits('plus',  ${item.id} )" > + </div>
+        </div>
+    </div>
+        `
+    })
+}
+
+function removeItemFromCart(id) {
+    cart = cart.filter((item) => item.id !== id);
+    updateCart();
+}
 
 
-// // CARRITO
+function changeNumberOfUnits(action, id) {
+    cart = cart.map((item) =>{
+        let numberOfUnits = item.numberOfUnits;
+        if(item.id === id) {
+            if(action === "minus" && numberOfUnits > 1){
+                numberOfUnits --;
+            } else if (action === "plus" && numberOfUnits < 5){
+                numberOfUnits++;
+            }
+        }
+        return {
+            ...item,
+            numberOfUnits,
+        };
+    });
+    updateCart();
+}
 
-// // let TortaArray = [torta1, torta2, torta3]
-// // let nombres = [torta1.nombre, torta2.nombre, torta3.nombre];
-// // let productosEnCarro = [];
-
-// // let TortasSeleccionadas = prompt(`Que torta desea encargar?: (ingresar "salir" si no desea pedir) \n\n` + torta1.mostrarProducto() + "\n\n" + torta2.mostrarProducto() + "\n\n" + torta3.mostrarProducto());
-
-// // while (TortasSeleccionadas != "salir" && TortasSeleccionadas != null) {
-// //         let productoParaCarro = TortaArray.find(
-// //             (item) => item.nombre == TortasSeleccionadas
-// //             );
-
-// //         if (productoParaCarro) {
-// //                 productosEnCarro.push(productoParaCarro);                
-// //             }   
-// //         break;
-// // }
 
 
-// // if (productosEnCarro.length > 0) {
-// //     alert(`${nombreIngresado} te invitamos a Iniciar sesion o Registrarte para terminar tu compra`);
-// //     let email = prompt('Ingrese su email');
-// //     let tel = prompt('Ingrese su tel');
-// //     comprar(email, tel, productosEnCarro);
-// // }
 
-// // function comprar(email, tel, productosEnCarro) {
-// //     let cant = productosEnCarro.reduce((acc, item) => item.precio + acc, 0);  
-// //     alert("Gracias " + nombreIngresado + " por tu compra. \n Total sin iva: $" + cant);   
-// // }
 
 
 
@@ -60,61 +216,12 @@ class Torta {
         this.sabor = sabor;
         this.precio = parseFloat(precio);
     }
-    mostrarProducto() {
-        return (
-        " Precio: " +
-        this.precio + 
-        " " +
-        " Producto: " +
-        this.nombre +
-        "\n"
-        );
-    }
-    sumaIva() {
-        alert("El precio con IVA es de $" + this.precio * 1.21);
-    }
 
 }
 
 const torta1 = new Torta( "Chocotorta" , "Dulce de leche y Chocolinas", "1200");
 const torta2 = new Torta("Clasica", "Vainilla o Chocolate", "1000");
 const torta3 = new Torta("Clasica con forma de inicial", "Brownie", "1500");
-
-
-
-
-
-
-// NEWSLETTER
-
-let inputNombre;
-let inputMail;
-let boton;
-let salidaNews;
-boton = document.getElementById("btnNews");
-inputNombre = document.querySelector(".newsletterFormNombre");
-inputMail = document.querySelector(".newsletterForm");
-salidaNews = document.getElementById("Newsletter");
-
-inputNombre.oninput = () => {
-    nombreForm = inputNombre.value;
-}
-inputMail.oninput = () => {
-    emailForm = inputMail.value;
-}
-boton.onclick = (event) => {
-    event.preventDefault();
-    let salidaNewsletter = "Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm;
-    if(inputMail.value != ""){
-        salidaNews.innerHTML = `
-        ${salidaNewsletter}
-        `
-        errores.style.display = "none";
-    }else{
-        errores.style.display = "block"
-    }  
-} 
-
 
 
 // GUSTOS 
@@ -161,6 +268,40 @@ function agregarGustosTabla(){
 
     });
 }
+
+
+
+// NEWSLETTER
+
+let inputNombre;
+let inputMail;
+let boton;
+let salidaNews;
+boton = document.getElementById("btnNews");
+inputNombre = document.querySelector(".newsletterFormNombre");
+inputMail = document.querySelector(".newsletterForm");
+salidaNews = document.getElementById("Newsletter");
+
+inputNombre.oninput = () => {
+    nombreForm = inputNombre.value;
+}
+inputMail.oninput = () => {
+    emailForm = inputMail.value;
+}
+boton.onclick = (event) => {
+    event.preventDefault();
+    let salidaNewsletter = "Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm;
+    if(inputMail.value != ""){
+        salidaNews.innerHTML = `
+        ${salidaNewsletter}
+        `
+        errores.style.display = "none";
+    }else{
+        errores.style.display = "block"
+    }  
+} 
+
+
 
 // CONSULTA
 
