@@ -69,6 +69,7 @@ a {
 }
 
 .presentacion h1 {
+  color: white;
   text-align: right;
   width: 200px;
   z-index: 2;
@@ -126,18 +127,15 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
 }
 
 .item {
@@ -475,6 +473,7 @@ footer {
        object-fit: cover;
   }
   .presentacion h1 {
+    color: white;
     text-align: right;
     width: 300px;
     z-index: 2;
@@ -796,14 +795,15 @@ footer {
        object-fit: cover;
   }
   .presentacion h1 {
+    color: white;
     text-align: right;
-    width: 400px;
+    width: 500px;
     z-index: 2;
     background-color: transparent;
     position: absolute;
-    top: 300px;
-    left: 900px;
-    font-size: 5rem;
+    top: 250px;
+    left: 500px;
+    font-size: 4rem;
     font-family: "Vollkorn", serif;
   }
   h2 {
