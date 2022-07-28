@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Vollkorn:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +32,7 @@
                     <a class="nav-link" href="index.html#historia">Nuestra Historia</a>
                   </li>
                   <a class="navbar-brand logo" href="index.html">
-                    <img src="media/logolargo.png" alt="logo">
+                    <img src="media/logohueco.png" alt="logo">
                   </a>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html#pedido">Hacer Pedido</a>
@@ -46,12 +48,16 @@
 
     <main class="container-fluid">
 
-        <section class="presentacion">
-            <h1>Cookies & Milk, las mejores dulzuras.  </h1>
-            <img src="media/madres.jpg">
-        </section>
+      <section class="presentacion">
+        <article>
+          <div>
+            <h1>Cookies & Milk. <br> Las mejores dulzuras. </h1>
+          </div>
+        </article>
+      </section>
 
-        <section id="historia" class="wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+
+        <section id="historia" class="wow animate__animated animate__fadeInLeft" data-wow-delay="1.5s">
             <h2>
                 Nuestra historia
             </h2>
@@ -92,12 +98,9 @@
             </div>
         </div>
 
-
-
-        
         </section>
 
-
+<div class="wow animate__animated animate__fadeInRight" data-wow-delay="1.5s"">
         <h2>Que gustos te gustaría agragar a nuestro menu?</h2>
         <section class="gustos">
 
@@ -127,23 +130,20 @@
                         
                 </table>
             </div>
-
-
-
         </section>
-
+      </div>
         <section id="contacto" class="wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
             <h2>Contactame!</h2>
             <section class="todoContacto">
                 <section class="contactoTexto">
-                    <p>Contactame para disolver todas tus dudas!<br></p>
+                  <p>Nuestras redes 🍪🍰<br></p>
                     <section class="linksContacto">
                     <a href="https://www.facebook.com/cookiesandmilkmdp" target="_blank"><i class="bi bi-facebook"></i></a> 
-                    <a href="" target="_blank"><i class="bi bi-whatsapp"></i></a> 
                     <a href="https://www.instagram.com/cookiesandmilkmdp/" target="_blank"><i class="bi bi-instagram"></i> </a>
                     </section>
                 </section>
             <section id="formulario">
+              <p>Contactanos para hacer un pedido personalizado!<br></p>
             <form>
                 <div class="forms">
                 <div class="mb-3">
@@ -166,8 +166,8 @@
 
     <footer>
         <section class="news">
-            <h4> Newsletter </h4> 
-            Suscríbete para recibir todas las novedades!  &#x1F496; 
+            <h4> Novedades </h4> 
+            Enterate primero de todas nuestras promos! 🍰
             <div id="Newsletter">
                 <form>
                   <label class="newsletterform_margen" for="nombre"></label>
@@ -181,7 +181,8 @@
             <section class="datos">
                 <h4> Datos de contacto </h4> 
                 <ul>
-                  <li> <i class="bi bi-envelope-paper-heart "></i> </a> cookiesandmilkmdp@gmail.com</li>
+                  <li> <i class="bi bi-envelope-paper-heart "></i> cookiesandmilkmdp@gmail.com</li>
+                  <li><i class="bi bi-whatsapp"></i>123456789 </li>
                   <li> <a href="https://www.instagram.com/cookiesandmilkmdp/" target="_blank"><i class="bi bi-instagram "></i></a> @cookiesandmilkmdp</li>
               </ul>
             </section>
@@ -198,6 +199,8 @@ new WOW().init();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./js/miarchivo.js"></script>
 </body>
 </html>

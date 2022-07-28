@@ -1,4 +1,4 @@
-$fonttitulo: 'Vollkorn', serif;
+$fonttitulo: 'DM Serif Display', serif;
 $font: 'Poppins', sans-serif;
 $rosa: #E48C89;
 $marron: #422919;
@@ -27,11 +27,11 @@ a{
     height: 50px;
     a{
         font-size: 1rem;
-        font-family: $fonttitulo;
+        font-family: $font;
         color: $marron;
-        background-color:  #4c729563;
         transition: all;
         transition-duration: 0.5s;
+        font-weight: 600;
     &:hover{
         color: $rosa;
     }}
@@ -48,30 +48,37 @@ a{
     background-color: transparent;
 }
 
-.navbar-expand-lg .navbar-collapse{
-    background-color: #4c729563;
+.presentacion {
+    min-height: 100vh;
+    background-image: url(../media/madres.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
-.presentacion{
-    img { 
-        position: relative; 
-        width: 100%;
-        height: 50vh;
-        object-fit: cover;
-     }
-     
-     h1 { 
-        color: white;
-        text-align: right;
-        width: 200px;
-        z-index: 2;
+.presentacion article {
+    div{
         background-color: transparent;
-        position:absolute; 
-        top: 90px; 
-        left: 100px; 
-        font-size: 1.5rem;
+    }
+    h1{
         font-family: $fonttitulo;
-     }
+        color: #fff;
+        background-color: transparent;
+        font-size: 5rem;
+    }
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
 }
+
+
+
 
 h2{
     text-align: center;
@@ -79,6 +86,7 @@ h2{
     color: $celeste;
     font-size: 2rem;
     margin-top: 20px;
+    font-weight: 600;
 }
 
 
@@ -121,10 +129,12 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 20px;
+    font-weight: 600;
     align-items: center;
     h4{
         color: $marron;
         text-align: center;
+
     }
     img{
         width: 200px;
@@ -214,7 +224,9 @@ h2{
     font-size: 1rem;
     transition: all;
     transition-duration: 0.5s;
+    padding: 8px;
     margin-top: 10px;
+    border: 0;
     &:hover{
         background-color: $celeste;
         border-color: $celeste;
@@ -253,10 +265,9 @@ h2{
     margin-left: 10px;
 }
 .btn{
-        color: #E48C89;
+    color: #E48C89;
     background-color: $marron;
     border-color: $marron;
-    width: 200px;
     font-size: 1rem;
     transition: all;
     transition-duration: 0.5s;
@@ -264,10 +275,20 @@ h2{
     &:hover{
         background-color: $celeste;
         border-color: $celeste;
-        width: 200px;
         font-size: 1rem;
     }
+    &:focus{
+        color: #E48C89;
+        background-color: $marron;
+        border-color: $marron;
+        font-size: 1rem;
+        box-shadow: none;
+    }
+    &:active{
+        box-shadow: none;
+    }
 }
+
 .btn1{
     border-radius: 0.25rem;
     text-align: center;
@@ -315,6 +336,19 @@ footer{
     align-items: end;
     justify-content: end;
 }
+.swal2-x-mark{
+    background-color: transparent;
+}
+.swal2-icon.swal2-success .swal2-success-ring{
+    background-color: transparent;
+}
+.swal2-icon-content{
+    background-color: transparent;
+}
+
+
+
+
 @media only screen and (min-width: 600px){
     @import "mediatablet";
 }

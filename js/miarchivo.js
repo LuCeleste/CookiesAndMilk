@@ -44,53 +44,47 @@ const products = [
     {
         id: 8,
         name: "Combo navidad 2",
-        price: 1500,
-        img: "media/navidad2.jpg",
-    },
-    {
-        id: 9,
-        name: "Combo navidad 3",
-        price: 1500,
+        price: 1800,
         img: "media/navidad3.jpg",
     },
     {
-        id: 10,
+        id: 9,
         name: "Alfajores",
         price: 200,
         img: "media/alfajores.jpg",
     },
     {
-        id: 11,
+        id: 10,
         name: "Alfaoreos",
         price: 300,
         img: "media/alfaoreo.jpg",
     },
     {
-        id: 12,
+        id: 11,
         name: "Budin de Chocolate",
         price: 800,
         img: "media/budinchoco.jpg",
     },
     {
-        id: 13,
+        id: 12,
         name: "Otros budines",
         price: 600,
         img: "media/budines.jpg",
     },
     {
-        id: 14,
+        id: 13,
         name: "Chocopaleta",
         price: 500,
         img: "media/chocopaleta.jpg",
     },    
     {
-        id: 15,
+        id: 14,
         name: "Cookies",
         price: 200,
         img: "media/cookies.jpg",
     },
     {
-        id: 16,
+        id: 15,
         name: "Macarons",
         price: 500,
         img: "media/macarons.jpg",
@@ -124,8 +118,18 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
+    Toastify({
+        text: 'Agregado al carrito 🧁🍰',
+        duration: 3000,
+        gravity: 'top',
+        position: 'left',
+        style: {
+            background: 'linear-gradient(to right, #E48C89, #4C7295)'
+        }}).showToast();
     if(cart.some((item) => item.id === id)){
+        
         changeNumberOfUnits("plus", id)
+        
     } else{
         const item = products.find((product) => product.id === id);
         cart.push({
@@ -147,6 +151,7 @@ function renderSubtotal() {
     let totalPrice = 0,
      totalItems =0;
     cart.forEach((item) => {
+        
         totalPrice += item.price * item.numberOfUnits;
         totalItems += item.numberOfUnits;
     });
@@ -178,10 +183,59 @@ function renderCartItems() {
     })
 }
 
-function removeItemFromCart(id) {
-    cart = cart.filter((item) => item.id !== id);
+// removeitems con sweetalert
+
+
+function removeItemFromCart(id){
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+  
+  swalWithBootstrapButtons.fire({
+    title: 'Seguro/a que queres eliminar este producto?',
+    text: "Esta accion no puede deshacerse",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Si, estoy seguro/a!',
+    cancelButtonText: 'No, lo quiero!',
+    reverseButtons: true,
+    showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        'Eliminado',
+        'El producto fue eliminado del carrito',
+        'warning',
+      )
+      cart = cart.filter((item) => item.id !== id);
     updateCart();
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Genial',
+        'Tu producto sigue en el carrito :)',
+        'success'
+      )
+    }
+  })
+  
 }
+
+// function removeItemFromCart(id) {
+//     cart = cart.filter((item) => item.id !== id);
+//     updateCart();
+// }
 
 
 function changeNumberOfUnits(action, id) {
@@ -192,6 +246,15 @@ function changeNumberOfUnits(action, id) {
                 numberOfUnits --;
             } else if (action === "plus" && numberOfUnits < 5){
                 numberOfUnits++;
+            } else if (action === "plus" && numberOfUnits >= 5){
+                Toastify({
+                    text: 'Limite de 5 unidades ❌',
+                    duration: 3000,
+                    gravity: 'top',
+                    position: 'left',
+                    style: {
+                        background: 'black'
+                    }}).showToast();
             }
         }
         return {
@@ -201,10 +264,6 @@ function changeNumberOfUnits(action, id) {
     });
     updateCart();
 }
-
-
-
-
 
 
 
