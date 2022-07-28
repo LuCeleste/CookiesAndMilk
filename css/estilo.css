@@ -43,10 +43,6 @@ a {
 
 .menu .logo img {
   display: none;
-  background-color: transparent;
-  height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .navbar-nav {
@@ -489,10 +485,6 @@ footer {
     color: #E48C89;
   }
   .menu .logo img {
-    background-color: transparent;
-    width: 80px;
-    -o-object-fit: cover;
-       object-fit: cover;
     display: none;
   }
   .navbar-nav {
@@ -818,10 +810,7 @@ footer {
   }
   .menu .logo img {
     background-color: transparent;
-    height: 150px;
-    width: 180px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    width: 250px;
     display: block;
   }
   .navbar-nav {
