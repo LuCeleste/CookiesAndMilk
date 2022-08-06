@@ -6,7 +6,7 @@ const cartItemsEl = document.querySelector(".cart-items");
 const subtotalEl = document.querySelector(".subtotal");
 
 function renderProducts() {
-    fetch('/data.json')
+    fetch('../data.json')
       .then((resinicial) => resinicial.json())
       .then((res) => {
         res.forEach( (product) => {
@@ -31,7 +31,7 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
-    fetch('/data.json')
+    fetch('../data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     const miArray = res;
@@ -215,7 +215,7 @@ let gustos = [torta1.sabor, torta2.sabor, torta3.sabor];
 let formularioGustos = document.getElementById("formularioGustos");
 let tabla = document.getElementById("tablaGustos");
 let errores = document.querySelector(".errores")
-errores.style.display = "none";
+// errores.style.display = "none";
 let inputGusto = document.getElementById("gusto");
 
 
@@ -226,11 +226,12 @@ formularioGustos.onsubmit = (event) => {
         gustos.push(nuevoGusto);
         limpiarTabla();
         agregarGustosTabla();
-        errores.style.display = "none";
+        // errores.style.display = "none";
         formularioGustos.reset();
-    }else{
-        errores.style.display = "block"
-    }    
+    }
+    // }else{
+    //     errores.style.display = "block"
+    // }    
 }
 
 function limpiarTabla(){
