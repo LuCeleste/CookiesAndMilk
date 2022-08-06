@@ -1,5 +1,5 @@
 function renderProducts() {
-fetch('../data.json')
+fetch('/data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     res.forEach( (product) => {
@@ -31,7 +31,7 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
-    fetch('../data.json')
+    fetch('/data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     const miArray = res;
@@ -62,6 +62,7 @@ function addToCart(id) {
 function updateCart() {
     renderCartItems();
     renderSubtotal();
+
     localStorage.setItem("CART", JSON.stringify(cart));
 }
 
@@ -140,6 +141,7 @@ const swalWithBootstrapButtons = Swal.mixin({
       cart = cart.filter((item) => item.id !== id);
     updateCart();
     } else if (
+
       result.dismiss === Swal.DismissReason.cancel
     ) {
       swalWithBootstrapButtons.fire(

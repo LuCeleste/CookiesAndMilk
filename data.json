@@ -4,31 +4,31 @@
         "id": 1,
         "name": "Chocotorta",
         "price": 1000,
-        "img": "/media/chocotorta.jpg"
+        "img": "../media/chocotorta.jpg"
     },
     {
         "id": 2,
         "name": "Torta Clasica",
         "price": 800,
-        "img": "/media/torta.jpg"
+        "img": "../media/torta.jpg"
     },
     {
         "id": 3,
         "name": "Inicial Cumpleaños",
         "price": 1200,
-        "img": "/media/tortaletra.jpg"
+        "img": "../media/tortaletra.jpg"
     },
     {
         "id": 4,
         "name": "Combo dia de las madres",
         "price": 800,
-        "img": "/media/madres.jpg"
+        "img": "../media/madres.jpg"
     },
     {
         "id": 5,
         "name": "Combo dia de las madres",
         "price": 700,
-        "img": "/media/madres2.jpg"
+        "img": "../media/madres2.jpg"
     },
     {
         "id": 6,
