@@ -1,8 +1,8 @@
 
 .menu{
-    height: 180px;
+    height: 100px;
     a{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-family: $font;
         color: $marron;
         transition: all;
@@ -13,7 +13,7 @@
     .logo{
         img{
             background-color:transparent;
-            width: 250px;
+            width: 150px;
             
             display: block;
         }
@@ -24,17 +24,24 @@
     display: none;
 }
 .navbar-nav{
+    li{
+        padding-left:70px;
+        padding-right:70px;
+      
+    }
     align-items: center;
     background-color: transparent;
 }
 
 .presentacion {
     min-height: 100vh;
-    background-image: url(../media/madres.jpg);
+    background-image: url(../media/presentacion.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: end;
 
 }
 .presentacion article {
@@ -45,16 +52,16 @@
         font-family: $fonttitulo;
         color: #fff;
         background-color: transparent;
-        font-size: 5rem;
+        font-size: 3rem;
     }
-    width: 100%;
+    width: 30%;
     min-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 30px;
+    background-color: rgba(37, 34, 34, 0.411);
+
 }
 
 
@@ -143,11 +150,11 @@ h2{
 
 .forms{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .formLogin{
     padding: 10px;
-    width: 150px;
+    width: 300px;
     border-radius: 1rem;
     font-size: 1.2rem;
     margin: 2px;
@@ -170,8 +177,8 @@ h2{
     border-width: 1px;
 }
 .newsletterForm,  .newsletterFormNombre{
-    padding: 5px;
-    width: 200px;
+    padding: 3px;
+    width: 150px;
     border-radius: 1rem;
     font-size: 1.2rem;
     margin: 1px;
@@ -200,7 +207,7 @@ h2{
     color: $rosa;
     background-color: $marron;
     border-color: $marron;
-    width: 80px;
+    width: 60px;
     font-size: 1rem;
     transition-duration: 0.5s;
     margin-top: 10px;
@@ -228,7 +235,17 @@ h2{
 
 }
 
-
+footer{
+    .bi{
+        font-size: 1.5rem;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 0.5rem;
+        margin-left: 10px;
+    }
+}
 .bi{
     color: $marron;
     font-size: 1.8rem;
@@ -262,7 +279,9 @@ h2{
     justify-content: space-evenly;
 }
 footer{
-    margin: 50px;
+    border-top: solid #E48C89;
+    padding-top: 30px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -278,4 +297,27 @@ footer{
 }
 .subtotal{
     text-align: center;
+}
+
+
+.elegidos{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.elegido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img{
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 1rem;
+        &:hover{
+            opacity:1;
+        }
+    }
+
 }

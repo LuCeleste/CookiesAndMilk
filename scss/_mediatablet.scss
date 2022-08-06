@@ -26,13 +26,18 @@
     width: 80px;
     }
 }
+
+
+
 .presentacion {
     min-height: 50vh;
-    background-image: url(../media/madres.jpg);
+    background-image: url(../media/presentacion.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: end;
 
 }
 .presentacion article {
@@ -44,14 +49,13 @@
         color: #fff;
         background-color: transparent;
     }
-    width: 100%;
+    width: 40%;
     min-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 30px;
+    background-color: rgba(37, 34, 34, 0.411);
 }
 
 h2{
@@ -246,7 +250,6 @@ h2{
     justify-content: space-around;
 }
 footer{
-    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -262,4 +265,27 @@ footer{
 }
 .subtotal{
     text-align: center;
+}
+
+
+.elegidos{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.elegido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img{
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 1rem;
+        &:hover{
+            opacity:1;
+        }
+    }
+
 }

@@ -54,11 +54,13 @@ a{
 
 .presentacion {
     min-height: 50vh;
-    background-image: url(../media/madres.jpg);
+    background-image: url(../media/presentacion.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: end;
 
 }
 .presentacion article {
@@ -69,16 +71,15 @@ a{
         font-family: $fonttitulo;
         color: #fff;
         background-color: transparent;
-        font-size: 3rem;
+        font-size: 2rem;
     }
-    width: 100%;
+    width: 40%;
     min-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 30px;
+    background-color: rgba(37, 34, 34, 0.411);
 }
 
 
@@ -315,7 +316,6 @@ h2{
     justify-content: space-around;
 }
 footer{
-    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -356,7 +356,45 @@ footer{
     align-self: center;
 }
 
+.elegidosTitulo{
+    text-align: center;
+}
 
+.elegidos{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+}
+
+.elegido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 1rem;
+        opacity: 0.8;
+        transition-duration: .5s;
+        &:hover{
+            opacity:1;
+        }
+    }
+    .btn{
+        width: 200px;
+    }
+
+}
+.ProductosBotonTodos{
+    h4{
+        text-align: center;
+    }
+}
+ul{
+    padding-left: 0px;
+}
 
 @media only screen and (min-width: 600px){
     @import "mediatablet";
@@ -366,7 +404,4 @@ footer{
 }
 .container-fluid{
     padding:0px;
-}
-ul{
-    padding-left: 0px;
 }

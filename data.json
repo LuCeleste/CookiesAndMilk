@@ -4,90 +4,90 @@
         "id": 1,
         "name": "Chocotorta",
         "price": 1000,
-        "img": "media/chocotorta.jpg"
+        "img": "/media/chocotorta.jpg"
     },
     {
         "id": 2,
         "name": "Torta Clasica",
         "price": 800,
-        "img": "media/torta.jpg"
+        "img": "/media/torta.jpg"
     },
     {
         "id": 3,
         "name": "Inicial Cumpleaños",
         "price": 1200,
-        "img": "media/tortaletra.jpg"
+        "img": "/media/tortaletra.jpg"
     },
     {
         "id": 4,
         "name": "Combo dia de las madres",
         "price": 800,
-        "img": "media/madres.jpg"
+        "img": "/media/madres.jpg"
     },
     {
         "id": 5,
         "name": "Combo dia de las madres",
         "price": 700,
-        "img": "media/madres2.jpg"
+        "img": "/media/madres2.jpg"
     },
     {
         "id": 6,
         "name": "Huevo relleno de pascuas",
         "price": 1200,
-        "img": "media/huevo1.jpg"
+        "img": "/media/huevo1.jpg"
     },
     {
         "id": 7,
         "name": "Combo navidad 1",
         "price": 1500,
-        "img": "media/navidad.jpg"
+        "img": "/media/navidad.jpg"
     },
     {
         "id": 8,
         "name": "Combo navidad 2",
         "price": 1800,
-        "img": "media/navidad3.jpg"
+        "img": "/media/navidad3.jpg"
     },
     {
         "id": 9,
         "name": "Alfajores",
         "price": 200,
-        "img": "media/alfajores.jpg"
+        "img": "/media/alfajores.jpg"
     },
     {
         "id": 10,
         "name": "Alfaoreos",
         "price": 300,
-        "img": "media/alfaoreo.jpg"
+        "img": "/media/alfaoreo.jpg"
     },
     {
         "id": 11,
         "name": "Budin de Chocolate",
         "price": 800,
-        "img": "media/budinchoco.jpg"
+        "img": "/media/budinchoco.jpg"
     },
     {
         "id": 12,
         "name": "Otros budines",
         "price": 600,
-        "img": "media/budines.jpg"
+        "img": "/media/budines.jpg"
     },
     {
         "id": 13,
         "name": "Chocopaleta",
         "price": 500,
-        "img": "media/chocopaleta.jpg"
+        "img": "/media/chocopaleta.jpg"
     },    
     {
         "id": 14,
         "name": "Cookies",
         "price": 200,
-        "img": "media/cookies.jpg"
+        "img": "/media/cookies.jpg"
     },
     {
         "id": 15,
         "name": "Macarons",
         "price": 500,
-        "img": "media/macarons.jpg"
+        "img": "/media/macarons.jpg"
     }
 ]
