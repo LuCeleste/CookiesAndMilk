@@ -20,10 +20,22 @@ let gustos = [torta1.sabor, torta2.sabor, torta3.sabor];
 
 let formularioGustos = document.getElementById("formularioGustos");
 let tabla = document.getElementById("tablaGustos");
-let errores = document.querySelector(".errores")
-// errores.style.display = "none";
+let errores = document.getElementById("errores")
+errores.style.display = "none";
 let inputGusto = document.getElementById("gusto");
 
+function tablaInicial(){
+    gustos.forEach(gustos => {
+        let tabla = document.querySelector(".tabla")
+        let filaTabla = document.createElement("tr")
+
+        filaTabla.innerHTML = `
+        <td> ${gustos} </td>
+        `
+    tabla.append(filaTabla)
+    })
+}
+tablaInicial()
 
 formularioGustos.onsubmit = (event) => {
     event.preventDefault();
@@ -32,12 +44,12 @@ formularioGustos.onsubmit = (event) => {
         gustos.push(nuevoGusto);
         limpiarTabla();
         agregarGustosTabla();
-        // errores.style.display = "none";
+        errores.style.display = "none";
         formularioGustos.reset();
-    }
-    // }else{
-    //     errores.style.display = "block"
-    // }    
+    
+    }else{
+        errores.style.display = "block";
+    }    
 }
 
 function limpiarTabla(){
@@ -86,10 +98,7 @@ boton.onclick = (event) => {
         salidaNews.innerHTML = `
         ${salidaNewsletter}
         `
-        errores.style.display = "none";
-    }else{
-        errores.style.display = "block"
-    }  
+    } 
 } 
 
 
@@ -105,9 +114,8 @@ formularioConsulta.onsubmit = (event) => {
     let nombreContacto = consultaNombre.value;
     if(consultaMail.value != ""){
         formularioConsulta.innerHTML = `
-        Gracias por contactarnos, ${nombreContacto}, a la brevedad respondemos!`}
-        else{
-        errores.style.display = "block"}
+        Gracias por contactarnos, ${nombreContacto}, a la brevedad respondemos!`
+    }
 
     }
 

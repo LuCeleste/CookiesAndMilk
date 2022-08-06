@@ -216,10 +216,7 @@ boton.onclick = (event) => {
     if(inputMail.value != ""){
         salidaNews.innerHTML = `
         ${salidaNewsletter}
-        `
-        errores.style.display = "none";
-    }else{
-        errores.style.display = "block"
-    }  
+        ` 
 } 
+}
 
