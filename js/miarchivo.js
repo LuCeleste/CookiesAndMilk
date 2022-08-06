@@ -1,24 +1,3 @@
-function renderProducts() {
-fetch('../data.json')
-  .then((resinicial) => resinicial.json())
-  .then((res) => {
-    res.forEach( (product) => {
-        productEl.innerHTML += `
-        <div class="item">
-            <h4>
-            ${product.name}
-            </h4>
-            <p>
-            $ ${product.price}
-            </p>
-            <img class="item-img" src=${product.img} alt="${product.name}">
-            <button onclick="addToCart(${product.id})" type="button" class="btn add-to-cart btn-outline-primary">Agregar al pedido</button>
-        </div>
-        `
-  })
-})
-}
-renderProducts();
 
 
 const productsListEl = document.querySelector(".products-list");
@@ -26,12 +5,33 @@ const productEl = document.querySelector(".products");
 const cartItemsEl = document.querySelector(".cart-items");
 const subtotalEl = document.querySelector(".subtotal");
 
-
+function renderProducts() {
+    fetch('/data.json')
+      .then((resinicial) => resinicial.json())
+      .then((res) => {
+        res.forEach( (product) => {
+            productEl.innerHTML += `
+            <div class="item">
+                <h4>
+                ${product.name}
+                </h4>
+                <p>
+                $ ${product.price}
+                </p>
+                <img class="item-img" src=${product.img} alt="${product.name}">
+                <button onclick="addToCart(${product.id})" type="button" class="btn add-to-cart btn-outline-primary">Agregar al pedido</button>
+            </div>
+            `
+      })
+    })
+    }
+    renderProducts();
+    
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
-    fetch('../data.json')
+    fetch('/data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     const miArray = res;
