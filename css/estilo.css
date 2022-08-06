@@ -53,7 +53,7 @@ a {
 }
 
 .presentacion {
-  min-height: 100vh;
+  min-height: 50vh;
   background-image: url(../media/madres.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -86,7 +86,7 @@ a {
   font-family: "DM Serif Display", serif;
   color: #fff;
   background-color: transparent;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 h2 {
@@ -370,8 +370,8 @@ h2 {
   color: #E48C89;
   background-color: #422919;
   border-color: #422919;
-  width: 50px;
-  font-size: 1rem;
+  width: 80px;
+  font-size: 1.2rem;
   -webkit-transition: all;
   transition: all;
   -webkit-transition-duration: 0.5s;
@@ -435,6 +435,10 @@ footer {
           justify-content: space-between;
 }
 
+.cart-item .item-info {
+  width: 120px;
+}
+
 .subtotal {
   text-align: center;
 }
@@ -467,6 +471,12 @@ footer {
   background-color: transparent;
 }
 
+.unit-price {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 @media only screen and (min-width: 600px) {
   .menu {
     z-index: 3;
@@ -494,7 +504,7 @@ footer {
     background-color: transparent;
   }
   .presentacion {
-    min-height: 100vh;
+    min-height: 50vh;
     background-image: url(../media/madres.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -850,6 +860,7 @@ footer {
     font-family: "DM Serif Display", serif;
     color: #fff;
     background-color: transparent;
+    font-size: 5rem;
   }
   h2 {
     text-align: center;

@@ -1,103 +1,8 @@
-const products = [
-    {
-        id: 1,
-        name: "Chocotorta",
-        price: 1000,
-        img: "media/chocotorta.jpg",
-    },
-    {
-        id: 2,
-        name: "Torta Clasica",
-        price: 800,
-        img: "media/torta.jpg",
-    },
-    {
-        id: 3,
-        name: "Inicial Cumpleaños",
-        price: 1200,
-        img: "media/tortaletra.jpg",
-    },
-    {
-        id: 4,
-        name: "Combo dia de las madres",
-        price: 800,
-        img: "media/madres.jpg",
-    },
-    {
-        id: 5,
-        name: "Combo dia de las madres",
-        price: 700,
-        img: "media/madres2.jpg",
-    },
-    {
-        id: 6,
-        name: "Huevo relleno de pascuas",
-        price: 1200,
-        img: "media/huevo1.jpg",
-    },
-    {
-        id: 7,
-        name: "Combo navidad 1",
-        price: 1500,
-        img: "media/navidad.jpg",
-    },
-    {
-        id: 8,
-        name: "Combo navidad 2",
-        price: 1800,
-        img: "media/navidad3.jpg",
-    },
-    {
-        id: 9,
-        name: "Alfajores",
-        price: 200,
-        img: "media/alfajores.jpg",
-    },
-    {
-        id: 10,
-        name: "Alfaoreos",
-        price: 300,
-        img: "media/alfaoreo.jpg",
-    },
-    {
-        id: 11,
-        name: "Budin de Chocolate",
-        price: 800,
-        img: "media/budinchoco.jpg",
-    },
-    {
-        id: 12,
-        name: "Otros budines",
-        price: 600,
-        img: "media/budines.jpg",
-    },
-    {
-        id: 13,
-        name: "Chocopaleta",
-        price: 500,
-        img: "media/chocopaleta.jpg",
-    },    
-    {
-        id: 14,
-        name: "Cookies",
-        price: 200,
-        img: "media/cookies.jpg",
-    },
-    {
-        id: 15,
-        name: "Macarons",
-        price: 500,
-        img: "media/macarons.jpg",
-    },
-]
-
-const productsListEl = document.querySelector(".products-list");
-const productEl = document.querySelector(".products");
-const cartItemsEl = document.querySelector(".cart-items");
-const subtotalEl = document.querySelector(".subtotal");
-
 function renderProducts() {
-    products.forEach( (product) => {
+fetch('./data.json')
+  .then((resinicial) => resinicial.json())
+  .then((res) => {
+    res.forEach( (product) => {
         productEl.innerHTML += `
         <div class="item">
             <h4>
@@ -110,35 +15,49 @@ function renderProducts() {
             <button onclick="addToCart(${product.id})" type="button" class="btn add-to-cart btn-outline-primary">Agregar al pedido</button>
         </div>
         `
-    })
+  })
+})
 }
 renderProducts();
+
+
+const productsListEl = document.querySelector(".products-list");
+const productEl = document.querySelector(".products");
+const cartItemsEl = document.querySelector(".cart-items");
+const subtotalEl = document.querySelector(".subtotal");
+
 
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
-    Toastify({
-        text: 'Agregado al carrito 🧁🍰',
-        duration: 3000,
-        gravity: 'top',
-        position: 'left',
-        style: {
-            background: 'linear-gradient(to right, #E48C89, #4C7295)'
-        }}).showToast();
-    if(cart.some((item) => item.id === id)){
-        
+    fetch('./data.json')
+  .then((resinicial) => resinicial.json())
+  .then((res) => {
+    const miArray = res;
+    if(cart.some((item) => item.id === id) ){
         changeNumberOfUnits("plus", id)
+    } 
+    else{
+        const item = miArray.find((product) => product.id === id);
+        Toastify({
+            text: 'Agregado al carrito 🧁🍰',
+            duration: 3000,
+            gravity: 'top',
+            position: 'left',
+            style: {
+                background: 'linear-gradient(to right, #E48C89, #4C7295)'
+            }}).showToast();
         
-    } else{
-        const item = products.find((product) => product.id === id);
         cart.push({
             ...item,
             numberOfUnits: 1,
-    });    
-    }
-    updateCart();
+        })}
+        updateCart();
+    })
+
 }
+
 
 function updateCart() {
     renderCartItems();
@@ -165,20 +84,23 @@ function renderCartItems() {
     cart.forEach((item) => {
         cartItemsEl.innerHTML += `
         <div class="cart-item">
-        <div class="item-info">
-            <img src=${item.img} alt="${item.name}">
-            <h4> ${item.name}</h4>
+            <div class="item-info">
+                <img src=${item.img} alt="${item.name}">
+                <h4> ${item.name}</h4>
+            </div>
+            <div class="unit-price">
+                <p>$ ${item.price} </p>
+            </div>
+            <div class="units">
+                <button onclick="removeItemFromCart(${item.id})" type="button" class="btn add-to-cart btn-outline-primary">Eliminar \u274C</button>
+                <div class="btn1 minus" onclick="changeNumberOfUnits('minus', ${item.id})" > - 
+                </div>
+                <div class="number"> ${item.numberOfUnits}
+                </div>
+                <div class="btn1 plus" onclick="changeNumberOfUnits('plus',  ${item.id} )" > + 
+                </div>
+            </div>
         </div>
-        <div class="unit-price">
-            <p>$ ${item.price} </p>
-        </div>
-        <div class="units">
-            <p class="eliminar" onclick="removeItemFromCart(${item.id})"> Eliminar \u274C </p>
-            <div class="btn1 minus" onclick="changeNumberOfUnits('minus', ${item.id})" > - </div>
-            <div class="number"> ${item.numberOfUnits}</div>
-            <div class="btn1 plus" onclick="changeNumberOfUnits('plus',  ${item.id} )" > + </div>
-        </div>
-    </div>
         `
     })
 }
@@ -232,11 +154,6 @@ const swalWithBootstrapButtons = Swal.mixin({
   
 }
 
-// function removeItemFromCart(id) {
-//     cart = cart.filter((item) => item.id !== id);
-//     updateCart();
-// }
-
 
 function changeNumberOfUnits(action, id) {
     cart = cart.map((item) =>{
@@ -246,6 +163,14 @@ function changeNumberOfUnits(action, id) {
                 numberOfUnits --;
             } else if (action === "plus" && numberOfUnits < 5){
                 numberOfUnits++;
+                Toastify({
+                    text: 'Agregado al carrito 🧁🍰',
+                    duration: 3000,
+                    gravity: 'top',
+                    position: 'left',
+                    style: {
+                        background: 'linear-gradient(to right, #E48C89, #4C7295)'
+                    }}).showToast();
             } else if (action === "plus" && numberOfUnits >= 5){
                 Toastify({
                     text: 'Limite de 5 unidades ❌',
