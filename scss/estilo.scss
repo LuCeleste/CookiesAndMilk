@@ -41,6 +41,12 @@ a{
         }
     }
 }
+.logo1{
+    padding: 10px;
+    img{
+    width: 60px;
+    }
+}
 .navbar-nav{
     align-items: center;
     background-color: transparent;
@@ -189,7 +195,7 @@ h2{
 }
 .newsletterForm, .newsletterFormNombre{
     padding: 10px;
-    width: 300px;
+    width: 250px;
     border-radius: 1rem;
     font-size: 1.2rem;
     margin: 1px;

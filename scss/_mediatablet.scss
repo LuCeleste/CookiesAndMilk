@@ -21,8 +21,11 @@
     align-items: center;
     background-color: transparent;
 }
-
-
+.logo1{
+    img{
+    width: 80px;
+    }
+}
 .presentacion {
     min-height: 50vh;
     background-image: url(../media/madres.jpg);
