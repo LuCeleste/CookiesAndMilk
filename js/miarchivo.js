@@ -1,5 +1,5 @@
 function renderProducts() {
-fetch('/data.json')
+fetch('../data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     res.forEach( (product) => {
@@ -31,7 +31,7 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 function addToCart(id) {
-    fetch('/data.json')
+    fetch('../data.json')
   .then((resinicial) => resinicial.json())
   .then((res) => {
     const miArray = res;
