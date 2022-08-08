@@ -703,6 +703,7 @@ ul {
             align-items: end;
   }
   .item {
+    width: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1059,6 +1060,7 @@ ul {
             align-items: end;
   }
   .item {
+    width: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
