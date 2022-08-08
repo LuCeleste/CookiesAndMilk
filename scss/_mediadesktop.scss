@@ -61,6 +61,7 @@
     align-items: center;
     text-align: center;
     background-color: rgba(37, 34, 34, 0.411);
+    margin-right: 50px;
 
 }
 
@@ -146,8 +147,6 @@ h2{
 }
 
 
-
-
 .forms{
     display: flex;
     flex-direction: column;
@@ -185,39 +184,8 @@ h2{
     border-width: 1px;
 }
 
-.btn-primary{
-    background-color: $marron;
-    border-color: $marron;
-    width: 100px;
-    font-size: 1.2rem;
-    transition: all;
-    transition-duration: 0.5s;
-    margin-top: 10px;
-    &:hover{
-        background-color: $celeste;
-        border-color: $celeste;
-        width: 100px;
-        font-size: 1.2rem;
-    }
-}
 
 
-.enviar{
-    border-radius: .5rem;
-    color: $rosa;
-    background-color: $marron;
-    border-color: $marron;
-    width: 60px;
-    font-size: 1rem;
-    transition-duration: 0.5s;
-    margin-top: 10px;
-    &:hover{
-        background-color: $celeste;
-        border-color: $celeste;
-        font-size: 1rem;
-        transition-duration: 0.5s;
-    }
-}
 .todoContacto{
     display: flex;
     flex-direction: row;
@@ -236,6 +204,12 @@ h2{
 }
 
 footer{
+    border-top: solid $rosa;
+    padding-top: 30px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     .bi{
         font-size: 1.5rem;
         padding-left: 8px;
@@ -257,20 +231,7 @@ footer{
     border-radius: 0.5rem;
     margin-left: 10px;
 }
-.btn{
-        color: #E48C89;
-    background-color: $marron;
-    border-color: $marron;
-    font-size: 1rem;
-    transition: all;
-    transition-duration: 0.5s;
-    margin-top: 10px;
-    &:hover{
-        background-color: $celeste;
-        border-color: $celeste;
-        font-size: 1rem;
-    }
-}
+
 
 .gustos{
     margin: 50px;
@@ -278,14 +239,7 @@ footer{
     flex-direction: row;
     justify-content: space-evenly;
 }
-footer{
-    border-top: solid #E48C89;
-    padding-top: 30px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+
 
 .cart-header{
     font-size: 2rem;
@@ -320,4 +274,50 @@ footer{
         }
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.productsAll{
+    display:flex;
+    flex-direction: row;
+}
+
+.cart{
+    margin: 20px;
+    display: inline-block;
+    width: 100vw;
+    background-color: #4c72952a;
+    border-radius: 0.8rem;
+    height:min-content;
+    p{
+        background-color: transparent;
+    }
+    h4{
+        background-color: transparent;
+    }
+    h2{
+        background-color: transparent;
+    }
+    div{
+        background-color: transparent;
+    }
+    h3{
+        background-color: transparent;
+    }
+
+}
+
+.subtotal, .cart-footer, .cart-items, .cart-header{
+    background-color: transparent;
 }
