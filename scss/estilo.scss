@@ -411,7 +411,9 @@ ul {
   .swal2-icon-content {
   background-color: transparent;
 }
-
+.swal2-icon.swal2-success .swal2-success-ring{
+    z-index: 1;
+}
 .unit-price {
   align-self: center;
 }
