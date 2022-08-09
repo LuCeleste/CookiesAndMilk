@@ -185,30 +185,32 @@ function changeNumberOfUnits(action, id) {
   updateCart();
 }
 
+newslet();
+
 // NEWSLETTER
 
-let inputNombre;
-let inputMail;
-let boton;
-let salidaNews;
-boton = document.getElementById("btnNews");
-inputNombre = document.querySelector(".newsletterFormNombre");
-inputMail = document.querySelector(".newsletterForm");
-salidaNews = document.getElementById("Newsletter");
+// let inputNombre;
+// let inputMail;
+// let boton;
+// let salidaNews;
+// boton = document.getElementById("btnNews");
+// inputNombre = document.querySelector(".newsletterFormNombre");
+// inputMail = document.querySelector(".newsletterForm");
+// salidaNews = document.getElementById("Newsletter");
 
-inputNombre.oninput = () => {
-  nombreForm = inputNombre.value;
-};
-inputMail.oninput = () => {
-  emailForm = inputMail.value;
-};
-boton.onclick = (event) => {
-  event.preventDefault();
-  let salidaNewsletter =
-    "Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm;
-  if (inputMail.value != "") {
-    salidaNews.innerHTML = `
-        ${salidaNewsletter}
-        `;
-  }
-};
+// inputNombre.oninput = () => {
+//   nombreForm = inputNombre.value;
+// };
+// inputMail.oninput = () => {
+//   emailForm = inputMail.value;
+// };
+// boton.onclick = (event) => {
+//   event.preventDefault();
+//   let salidaNewsletter =
+//     "Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm;
+//   if (inputMail.value != "") {
+//     salidaNews.innerHTML = `
+//         ${salidaNewsletter}
+//         `;
+//   }
+// };

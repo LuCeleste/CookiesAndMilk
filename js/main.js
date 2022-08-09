@@ -17,8 +17,6 @@ let gustos = [torta1.sabor, torta2.sabor, torta3.sabor];
 
 let formularioGustos = document.getElementById("formularioGustos");
 let tabla = document.getElementById("tablaGustos");
-let errores = document.getElementById("errores");
-errores.style.display = "none";
 let inputGusto = document.getElementById("gusto");
 
 function tablaInicial() {
@@ -67,33 +65,7 @@ function agregarGustosTabla() {
   });
 }
 
-// NEWSLETTER
-
-let inputNombre;
-let inputMail;
-let boton;
-let salidaNews;
-boton = document.getElementById("btnNews");
-inputNombre = document.querySelector(".newsletterFormNombre");
-inputMail = document.querySelector(".newsletterForm");
-salidaNews = document.getElementById("Newsletter");
-
-inputNombre.oninput = () => {
-  nombreForm = inputNombre.value;
-};
-inputMail.oninput = () => {
-  emailForm = inputMail.value;
-};
-boton.onclick = (event) => {
-  event.preventDefault();
-  let salidaNewsletter =
-    "Gracias " + nombreForm + " por brindarnos tu mail: " + emailForm;
-  if (inputMail.value != "") {
-    salidaNews.innerHTML = `
-        ${salidaNewsletter}
-        `;
-  }
-};
+newslet();
 
 // CONSULTA
 
