@@ -1,2 +1,7 @@
 # ProyectoJavascriptAlonso
-Bakery e-commerce, made as a final proyect for the CoderHouse's Javascript course.
+<p align="left">
+Bakery e-commerce, final proyect for the CoderHouse's Javascript course.
+https://luceleste.github.io/CookiesAndMilk/</p>
+
+
+
